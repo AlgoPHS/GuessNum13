@@ -1,16 +1,21 @@
 import random
-number = random.randint(1,100)
 def main():
+    number = random.randint(1,100)
     tries =0
     while True:
-        print("What is your guess?")
-        guess = int(input())
-        tries+=1
         if tries<4:
+            print("What is your guess?")
+            guess = int(input())
+            tries+=1
             if guess == number:
                 print("Well done. I'm so proud!")
                 print("%s %s" % ("The number was", number))
-                break
+                print("Would you like to play again?")
+                if input() == "n":
+                    break
+                else:
+                    number = random.randint(1,100)
+                    tries = 0
             if guess > number:
                 print("Too high, try again!")
             if guess < number:
