@@ -1,5 +1,9 @@
+# Guess a number 13
+# Algo 2017
+# Marie + Tyler
+
 import random
-def main():
+def playGame():
     number = random.randint(1,100)
     tries =0
     while True:
@@ -23,5 +27,14 @@ def main():
         else:
             print("You have failed 4 times. Sad!")
             print("%s %s" % ("The number was", number))
+            break
+def main():
+    playGame()
+    while True:
+        print("Would you like to play again? (y/n)")
+        answer = input()
+        if answer == 'y':
+            playGame()
+        else:
             break
 main()
